@@ -38,15 +38,38 @@ public class Player
                 initPlayer(new Samurai());
                 break;
             case 2:
-                initPlayer(new Knight());
+                initPlayer(new Archer());
                 break;
             case 3:
-                initPlayer(new Archer());
+                initPlayer(new Knight());
                 break;
             default:
                 initPlayer(new Samurai());
 
         }
+        System.out.println("Caracter :"+this.getName()+" Damage :"+this.getDamage()+ " Health : "+this.getHealth());
+    }
+
+    public void selectLocation()
+    {Location location=null;
+        System.out.println("------------------------------------------");
+        System.out.println("Locations");
+        System.out.println("1 Safe House");
+        System.out.println("2 Tool Store");
+        System.out.println("Please select a location !!");
+        int  selectLoc=input.nextInt();
+
+        switch (selectLoc) {
+            case 1:
+                location=new SafeHouse(this);
+                break;
+            case 2:
+                location=new ToolStore(this);
+                break;
+            default:
+                location=new SafeHouse(this);
+        }
+        location.onLocation();
     }
 
     public void initPlayer(gameCharacter gameChar)

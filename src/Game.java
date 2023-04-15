@@ -16,5 +16,6 @@ public class Game
         System.out.println("Please select a character :");
         player.selectCharacter();
 
+
     }
 }
