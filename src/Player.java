@@ -49,7 +49,9 @@ public class Player
                 initPlayer(new Samurai());
 
         }
-        System.out.println("Caracter :"+this.getName()+" Damage :"+this.getDamage()+ " Health : "+this.getHealth());
+        System.out.println("Caracter :"+this.getName()+
+                " Damage :"+this.getDamage()+
+                " Health : "+this.getHealth());
     }
 
 
@@ -62,6 +64,15 @@ public class Player
         this.setName(gameChar.getName());
     }
 
+    public  void printInfo()
+    {
+        System.out.println(
+                "Weapor :"+ getInventory().getWeapon().getName() + " Your damage  :" + getDamage()
+                +"health :"+getHealth()
+                +" Money :"+getMoney()
+        );
+    }
+
     public Inventory getInventory() {
         return inventory;
     }
@@ -71,7 +82,7 @@ public class Player
     }
 
     public int getDamage() {
-        return damage;
+        return damage + this.getInventory().getWeapon().getDamage();
     }
 
     public void setDamage(int damage) {
