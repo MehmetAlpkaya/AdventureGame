@@ -20,6 +20,7 @@ public class ToolStore extends normalLocation{
         {
             case 1:
                 printWeapon();
+                buyWeapon();
                 break;
 
             case 2:
@@ -42,6 +43,12 @@ public class ToolStore extends normalLocation{
                     w.getPrice()+" damage "+
                     w.getDamage()+" > ");
         }
+
+
+    }
+
+    public void buyWeapon()
+    {
         System.out.println("Select a weapon :");
         int selectWeaponId =input.nextInt();
         while (selectWeaponId<1 ||selectWeaponId>Weapon.weapons().length)
@@ -55,13 +62,15 @@ public class ToolStore extends normalLocation{
         if (selectedWeapon != null)
         {
             if(selectedWeapon.getPrice()>this.getPlayer().getMoney())
-            System.out.println("You have insufficient balance");
+                System.out.println("You have insufficient balance");
             else{
                 int balance= getPlayer().getMoney()-selectedWeapon.getPrice();
                 System.out.println("You got "+selectedWeapon.getName()+ "");
                 this.getPlayer().setMoney(balance);
                 System.out.println("you have "+getPlayer().getMoney()+" money");
-
+                System.out.println("first Weapon :"+this.getPlayer().getInventory().getWeapon().getName());
+                this.getPlayer().getInventory().setWeapon(selectedWeapon);
+                System.out.println("last weapon :"+this.getPlayer().getInventory().getWeapon().getName());
             }
         }
     }

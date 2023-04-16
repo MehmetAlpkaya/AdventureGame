@@ -7,11 +7,13 @@ public class Player
     private int money;
     private String name;
     private String charName;
+    private Inventory inventory;
     private Scanner input=new Scanner(System.in);
 
     public Player(String name)
     {
         this.name=name;
+        this.inventory=new Inventory();
     }
 
     public void selectCharacter()
@@ -58,6 +60,14 @@ public class Player
         this.setHealth(gameChar.getHealth());
         this.setMoney(gameChar.getMoney());
         this.setName(gameChar.getName());
+    }
+
+    public Inventory getInventory() {
+        return inventory;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
 
     public int getDamage() {
