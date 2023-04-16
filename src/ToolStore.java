@@ -35,6 +35,10 @@ public class ToolStore extends normalLocation{
     public void printWeapon()
     {
         System.out.println("----------weapons----------------");
+        for(Weapon w: Weapon.weapons())
+        {
+            System.out.println(w.getName() + " price "+w.getDamage()+" damage ");
+        }
     }
     public void printArmor()
     {
