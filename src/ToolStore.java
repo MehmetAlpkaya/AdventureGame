@@ -43,12 +43,26 @@ public class ToolStore extends normalLocation{
                     w.getDamage()+" > ");
         }
         System.out.println("Select a weapon :");
-        int selectWeapon =input.nextInt();
-        while (selectWeapon<1 ||selectWeapon>Weapon.weapons().length)
+        int selectWeaponId =input.nextInt();
+        while (selectWeaponId<1 ||selectWeaponId>Weapon.weapons().length)
         {
             System.out.println("Enter valid value :");
-            selectWeapon=input.nextInt();
+            selectWeaponId=input.nextInt();
 
+        }
+        Weapon selectedWeapon=Weapon.getWeaponObjById(selectWeaponId);
+
+        if (selectedWeapon != null)
+        {
+            if(selectedWeapon.getPrice()>this.getPlayer().getMoney())
+            System.out.println("You have insufficient balance");
+            else{
+                int balance= getPlayer().getMoney()-selectedWeapon.getPrice();
+                System.out.println("You got "+selectedWeapon.getName()+ "");
+                this.getPlayer().setMoney(balance);
+                System.out.println("you have "+getPlayer().getMoney()+" money");
+
+            }
         }
     }
     public void printArmor()
