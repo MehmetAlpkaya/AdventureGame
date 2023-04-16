@@ -37,7 +37,18 @@ public class ToolStore extends normalLocation{
         System.out.println("----------weapons----------------");
         for(Weapon w: Weapon.weapons())
         {
-            System.out.println(w.getName() + " price "+w.getDamage()+" damage ");
+            System.out.println("< "+w.getId()+
+                    w.getName() + " price "+
+                    w.getPrice()+" damage "+
+                    w.getDamage()+" > ");
+        }
+        System.out.println("Select a weapon :");
+        int selectWeapon =input.nextInt();
+        while (selectWeapon<1 ||selectWeapon>Weapon.weapons().length)
+        {
+            System.out.println("Enter valid value :");
+            selectWeapon=input.nextInt();
+
         }
     }
     public void printArmor()

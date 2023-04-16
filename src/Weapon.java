@@ -16,8 +16,8 @@ public class Weapon
     {
         Weapon[] weaponsList=new Weapon[3];
         weaponsList[0]=new Weapon("gun",1,2, 25);
-        weaponsList[0]=new Weapon("sword",2,3, 35);
-        weaponsList[0]=new Weapon("Tabanca",3,7, 45);
+        weaponsList[1]=new Weapon("sword",2,3, 35);
+        weaponsList[2]=new Weapon("Tabanca",3,7, 45);
         return weaponsList;
     }
     public String getName() {
