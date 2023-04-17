@@ -98,7 +98,7 @@ public class ToolStore extends normalLocation{
                     w.getPrice()+" block "+
                     w.getBlock()+" > ");
         }
-        System.out.println("Armors");
+        System.out.println("For back enter - 0");
     }
     public void buyArmor()
     {
@@ -109,23 +109,26 @@ public class ToolStore extends normalLocation{
             System.out.println("Please select a valid id");
             selectArmorId= input.nextInt();
         }
-
-        Armor selectArmor=Armor.getArmorObjById(selectArmorId);
-
-        if (selectArmor != null)
+        if(selectArmorId!=0)
         {
-            if(selectArmor.getPrice()>this.getPlayer().getMoney())
-                System.out.println("You have insufficient balance");
-            else{
-                int balance= getPlayer().getMoney()-selectArmor.getPrice();
-                System.out.println("You got "+selectArmor.getName()+ "");
-                this.getPlayer().setMoney(balance);
-                System.out.println("you have "+getPlayer().getMoney()+" money");
+            Armor selectArmor=Armor.getArmorObjById(selectArmorId);
 
-                this.getPlayer().getInventory().setArmor(selectArmor);
-                System.out.println("last Armor :"+this.getPlayer().getInventory().getArmor().getName());
+            if (selectArmor != null)
+            {
+                if(selectArmor.getPrice()>this.getPlayer().getMoney())
+                    System.out.println("You have insufficient balance");
+                else{
+                    int balance= getPlayer().getMoney()-selectArmor.getPrice();
+                    System.out.println("You got "+selectArmor.getName()+ "");
+                    this.getPlayer().setMoney(balance);
+                    System.out.println("you have "+getPlayer().getMoney()+" money");
+
+                    this.getPlayer().getInventory().setArmor(selectArmor);
+                    System.out.println("last Armor :"+this.getPlayer().getInventory().getArmor().getName());
+                }
             }
         }
+
 
     }
 }
