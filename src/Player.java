@@ -26,12 +26,12 @@ public class Player
         {
             System.out.println("Id :"+x.getId()+
                     "\t\t Character :"+x.getName()+
-                    "\t\t Health"+x.getHealth()+
+                    "\t\t Health "+x.getHealth()+
                     "\t\t Damage :"+ x.getDamage()+
                     "\t\t Para :"+x.getMoney());
         }
         System.out.println("--------------------------------");
-        System.out.println("Bir karekter seçiniz");
+        System.out.println("Select a carecter");
         int selectChar=input.nextInt();
 
         switch (selectChar)
