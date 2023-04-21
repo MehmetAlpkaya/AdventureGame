@@ -22,7 +22,7 @@ public abstract class BattleLoc extends Location{
         select=select.toUpperCase();
         if(select.equals("F"))
         {
-            System.out.println("savaşş");
+            System.out.println("You are in the FİGHT be carefulllll!");
         }
 
         return true;
