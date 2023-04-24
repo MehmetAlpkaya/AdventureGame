@@ -5,12 +5,23 @@ public class Obstacle
     private int id;
     private int damage;
     private int health;
+    private  int award;
 
-    public Obstacle(String name, int id, int damage, int health) {
-        this.name=name;
+    public Obstacle(String name, int id, int damage, int health, int award) {
+        this.name = name;
         this.id = id;
         this.damage = damage;
         this.health = health;
+        this.award = award;
+    }
+
+
+    public int getAward() {
+        return award;
+    }
+
+    public void setAward(int award) {
+        this.award = award;
     }
 
     public String getName()

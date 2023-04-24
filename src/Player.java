@@ -73,6 +73,10 @@ public class Player
         );
     }
 
+    public int totalDamage()
+    {
+        return damage + this.getInventory().getWeapon().getDamage();
+    }
     public Inventory getInventory() {
         return inventory;
     }
@@ -82,7 +86,7 @@ public class Player
     }
 
     public int getDamage() {
-        return damage + this.getInventory().getWeapon().getDamage();
+        return damage ;
     }
 
     public void setDamage(int damage) {
